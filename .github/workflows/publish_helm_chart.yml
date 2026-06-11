@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "ci/helm-chart/**"
-      - ".github/workflows/helm-chart-publish.yaml"
 
 # Cancel in-progress runs when developers push additional changes
 concurrency:
