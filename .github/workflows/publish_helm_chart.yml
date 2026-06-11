@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@v6
 
       - name: Set up Helm
-        uses: azure/setup-helm@dda3372f752e03dde6b3237bc9431cdc2f7a02a2 # v5.0.0
+        uses: azure/setup-helm@v5.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: "v3.19.2"
@@ -47,10 +47,10 @@ jobs:
           helm repo index ./chart-artifacts --url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./chart-artifacts
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@d6db90164dcc165427c6c5c21e86e7711852b8ad # v4
+        uses: actions/deploy-pages@v4
